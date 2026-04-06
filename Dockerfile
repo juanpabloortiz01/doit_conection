@@ -1,5 +1,9 @@
 FROM nginx:alpine
 
-RUN echo "build fix"
+WORKDIR /usr/share/nginx/html
 
-COPY . /usr/share/nginx/html
+RUN rm -rf ./*
+
+COPY index.html .
+
+RUN ls -la
